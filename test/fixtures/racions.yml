@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  date: 2016-04-13
+  gram: 1.5
+  user: 
+  product: 
+
+two:
+  date: 2016-04-13
+  gram: 1.5
+  user: 
+  product: 

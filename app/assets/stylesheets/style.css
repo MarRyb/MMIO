@@ -1,0 +1,78 @@
+.div_video_main {
+	height: 650px;
+	overflow: hidden;
+	position: relative;
+}
+.text_video_main {
+	font-family: all;
+	position: absolute;
+	color: white;
+}
+.video_overley{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background: rgba(3, 3, 3, 0.35);
+}
+.text_video_main  h1 {
+	font-size: 50px;
+	text-align: center;
+	padding: 0;
+	margin-top: 200px;
+	line-height: 50px;
+	font-family: "PilGi"
+}
+.text_video_main  p {
+	margin: 0 250px;
+	font-size: 20px;
+	text-align: center;
+	font-family: "Comic Sans MS"
+}
+.navbar {
+	margin-bottom: 0;
+}
+.logo {
+	color: white !important;
+	font-family: 'Indie Flower', cursive;
+	font-weight: bold;
+	font-size: 30px;
+}
+.navbar {
+    border-radius: 0;
+}
+.modal {
+  text-align: center;
+  padding: 0!important;
+}
+
+.modal:before {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+  margin-right: -4px;
+}
+
+.modal-dialog {
+  display: inline-block;
+  text-align: left;
+  vertical-align: middle;
+}
+.btn-black {
+	background: #222;
+	border: #222;
+}
+
+.btn-black:hover, .btn-black:focus, .btn-black:active {
+	background: black;
+	border: black;
+}
+.modal-header {
+	background: rgb(34, 34, 34) none repeat scroll 0% 0%;
+	color: white;
+	text-align: center;
+}
+.modal-header .close {
+	color: white;
+	text-shadow: none;
+}

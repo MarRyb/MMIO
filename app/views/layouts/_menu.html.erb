@@ -1,0 +1,31 @@
+<nav class="navbar navbar-inverse">
+	<div class="container-fluid">
+		<div class="navbar-header">
+		<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expended="false">
+				<span class="sr-only">
+					Navigator
+				</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+		</button>
+			<%= link_to "HealthyFOOD", root_path, class: "navbar-brand logo" %>
+		</div>
+
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			<ul class="nav navbar-nav navbar-right">
+			<% if user_signed_in? %>
+				<li><%=	link_to "Мой профиль",  new_user_session_path  %></li>
+				<li><%=	link_to "Выйти",  destroy_user_session_path, method: "delete"   %></li>
+			<% else %>
+				<li><%= link_to "Sign up", "#sign_up", "data-toggle" => "modal", :class => 'btn btn-small' %></li>
+				<li><%= link_to "Sign in", "#sign_in", "data-toggle" => "modal", :class => 'btn btn-small' %></li>
+			<% end %>
+			</ul>
+		</div>
+	</div>
+</nav>
+
+
+<%= render 'shared/sign_in' %>
+<%= render 'shared/sign_up' %>

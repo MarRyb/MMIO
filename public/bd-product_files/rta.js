@@ -1,0 +1,1 @@
+crtg_content = ''; (function(){document.cookie = 'crtg_rta=' + escape(crtg_content) + '; path=/; expires=Thu, 19 May 2016 15:25:19 GMT; domain=narod.ru';})();

@@ -1,0 +1,54 @@
+<%= content_for :video do %>
+		<div class="div_video_main">
+	<div class="video_overley"></div>
+	<div class="text_video_main">
+		<h1>Personal food assistant<br></h1>
+		<p>* * * * * * * * * * * * * * * * * * * * * * *</p>
+		<p>Существует множество диет, которые приводят к успешному снижению веса, если Вы точно следуете предписанным правилам. Однако диеты, приводящие к снижению веса, нельзя приравнивать к здоровому питанию. Диета – это строгие ограничения, ради которых Вы вынуждены изменить модель своего питания.Вместо того чтобы тратить время на выбор таких диет, подумайте о своем здоровье и образе жизни. И в этом мы вам поможем!</p>
+	</div>
+		<video autoplay loop muted>
+		<source src="/20 сладких мгновений для тех, кто обожает еду.mp4" type="video/mp4" class="video_main">
+		</video>
+	</div>
+<% end -%>
+<!-- 
+<div class="row">
+	<div class="col-md-4 col-md-offset-4">
+	
+		<% if user_signed_in? %>
+			<br>
+			<%= form_tag result_path do %>
+				<div class="form-group">
+					<%= label_tag :height %>
+					<%= text_field_tag :height, nil, class: "form-control" %>
+				</div>
+				<div class="form-group">
+					<%= label_tag :weight %>
+					<%= text_field_tag :weight, nil, class: "form-control" %>
+				</div>
+				<div class="form-group">
+					<%= label_tag :weight %>
+					<%= collection_select :activnost_id, :id, Activnost.all, :id, :title, {},{class: "form-control"} %>
+				</div>
+				<div class="form-group">
+				
+					<%= collection_check_boxes :product, :id, Product.first(50), :id, :title do |b| %>
+					<div>
+						<%= b.label {b.check_box + b.text } %>
+					</div>
+				<% end -%>
+				</div>
+				<div class="form-group text-center">
+					<%= submit_tag "Отправить форму", class: "btn btn-default" %>
+				</div>
+
+			<% end %>
+
+
+
+
+		<% else %>
+			
+		<% end %>
+	</div> -->
+</div>
