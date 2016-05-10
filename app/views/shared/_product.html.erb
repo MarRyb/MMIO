@@ -1,0 +1,24 @@
+<% selected = session[:selected_products_ids].include?(product.id) %>
+<% onclick = (show_arrow) ? "Product.select(#{product.id});" : "Product.remove(#{product.id});" %>
+
+<div class="product <%= selected ? 'selected' : 'not-selected' %>" data-product-id="<%= product.id %>" style="background: url(<%= product.picture.url %>) no-repeat 50% 50%;height: 192px;" onclick="<%= onclick %>">
+		<div>
+			
+			<div class="wrap">
+				<div id="check-part-1" class="check-sign"></div>
+				<div id="check-part-2" class="check-sign"></div>
+			</div>
+
+			<div class="wrap2">
+				<div id="crest-part-1" class="crest-sign"></div>
+				<div id="crest-part-2" class="crest-sign"></div>
+			</div>
+
+			<div><%= product.title %></div>
+			<div>***</div>
+			<div class="info">Белки: <%= product.belki %> г</div>
+			<div class="info">Жиры: <%= product.zhiri %> г</div>
+			<div class="info">Углеводы: <%= product.uglevodi %> г</div>
+		</div>
+	</div>
+</div>

@@ -3,6 +3,7 @@
 <head>
   <title>MMIO_RybalkoMarina</title>
   <link href='https://fonts.googleapis.com/css?family=Indie+Flower' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,300&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -11,11 +12,11 @@
 
 <%= render "layouts/menu"%>
 
-	<%= yield :video %>
+<%= yield :video %>
 <div class="container">
 	<%= yield %>
 </div>
-
+<%= render "shared/footer" %>
 
 </body>
 </html>

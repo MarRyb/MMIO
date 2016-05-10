@@ -112,6 +112,9 @@ GEM
     kaminari (0.16.3)
       actionpack (>= 3.0.0)
       activesupport (>= 3.0.0)
+    kaminari-bootstrap (3.0.1)
+      kaminari (>= 0.13.0)
+      rails
     launchy (2.4.3)
       addressable (~> 2.3)
     less (2.6.0)
@@ -234,6 +237,8 @@ DEPENDENCIES
   coffee-rails (~> 4.1.0)
   devise
   jquery-rails
+  kaminari
+  kaminari-bootstrap (~> 3.0.1)
   less-rails
   letter_opener
   nokogiri

@@ -1,0 +1,12 @@
+<div class="row">
+	<% categories.each do |category| %>
+		<div class="col-md-3">
+			<div class="product" style="background: url(<%= category.picture %>) no-repeat 50% 50%;height: 192px;" onclick="Category.select(<%= category.to_json %>)">
+				<div>
+					<div><%= category.title %></div>
+					<div class="info"><%= category.products.count %> продуктов</div>
+				</div>
+			</div>
+		</div>
+	<% end %>
+</div>

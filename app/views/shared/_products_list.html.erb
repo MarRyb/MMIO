@@ -1,0 +1,11 @@
+<div class="row">
+	<% products.each do |product| %>
+		<div class="col-md-3">
+			<%= render 'shared/product', product: product, show_arrow: show_pagination %>
+	<% end %>
+</div>
+
+<% if show_pagination %>
+	<%= link_to "Выбрать категорию", '#', class: "btn btn-primary pull-right btn-black", style: "margin-top:20px;", onclick: 'Product.backToCategories(); return false;' %>
+	<%= paginate products, remote: true, params: { controller: "products", action: "load_collection", category_id: @category_id } %>
+<% end %>

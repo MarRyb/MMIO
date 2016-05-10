@@ -76,3 +76,137 @@
 	color: white;
 	text-shadow: none;
 }
+.products .row {
+	margin-left: -1px;
+	margin-right: -1px;
+}
+.products .row .col-md-3 {
+	padding-left: 1px;
+	padding-right: 1px;
+}
+.products .product {
+	height: 192px;
+	display: table;
+	width: 100%;
+	text-align: center;
+	margin-bottom: 2px;
+	cursor: pointer;
+	background-size: cover !important;
+}
+.products .product > div {
+	font-size: 17px;
+	font-family: 'Open Sans', sans-serif;
+	background: rgba(0,0,0,.3);
+	color: white;
+	width: 100%;
+	padding: 10px 15px;
+	height: 100%;
+	vertical-align: middle;
+	display: table-cell;
+	text-shadow: 4px 4px 0px rgba(0, 0, 0, 1);
+	transition: .15s ease-out all;
+	-moz-transition: .15s ease-out all;
+	-webkit-transition: .15s ease-out all;
+	-o-transition: .15s ease-out all;
+}
+.products .product:hover > div {
+	background: rgba(0,0,0,.4);
+}
+.products .product.selected > div {
+	background: rgba(0,0,0,.7);
+}
+
+.products .product > div .info {
+	margin-top: 3px;
+	opacity: .8;
+	font-size: 11px;
+	text-transform: uppercase;
+}
+
+.pagination > .active > a, .pagination > .active > span, .pagination > .active > a:hover, .pagination > .active > span:hover, .pagination > .active > a:focus, .pagination > .active > span:focus {
+	background: #222;
+	border-color: #222;	
+}
+.pagination > li > a {
+	color: #222 !important;
+}
+.pagination > li.active > a {
+	color: white !important;
+}
+
+.not-selected .wrap {
+	display: none;
+}
+.wrap {
+	width: 108px;
+	overflow: hidden;
+	height: 86px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-top: -43px;
+	margin-left: -54px;
+}
+.check-sign {
+	position: absolute;
+	background: #5fb95f;
+}
+#check-part-1 {
+	width: 50px;
+	height: 20px;    
+	transform:rotate(45deg);	
+	top: 50px;
+}
+
+#check-part-2 {
+	width: 100px;
+	height: 20px;    
+	transform: rotate(-45deg);
+	left: 16px;
+	top: 31px;
+}
+
+.selected_products .product.selected:hover .wrap {
+	display: none;
+}
+.selected_products .product.selected:hover .wrap2 {
+	display: block;
+}
+
+.wrap2 {
+	display: none;
+	width: 85px;
+	overflow: hidden;
+	height: 84px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-top: -42px;
+	margin-left: -42px;
+}
+.crest-sign {
+	position: absolute;
+	background: red;
+}
+#crest-part-1 {
+	width: 100px;
+	height: 20px;
+	transform: rotate(45deg);
+	top: 32px;
+	left: -7px;
+}
+
+#crest-part-2 {
+width: 100px;
+	height: 20px;
+	transform: rotate(-45deg);
+	left: -7px;
+	top: 32px;
+}
+.footer {
+	background: #101010;
+	color: #eee;
+	padding: 10px 0;
+	margin: 0;
+	margin-top: 20px !important;
+}

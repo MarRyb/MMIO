@@ -7,7 +7,14 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   root 'application#home'
+
+  get 'predict' => "application#predict"
+  get 'load_products' => 'products#load_collection'
+  get 'load_categories' => 'application#load_categories'
+  post 'products/:id/select' => 'products#select'
+  post 'products/:id/remove' => 'products#remove'
   post 'result' => "application#result"
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
