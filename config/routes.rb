@@ -9,11 +9,18 @@ Rails.application.routes.draw do
   root 'application#home'
 
   get 'predict' => "application#predict"
+  post 'predict' => "application#result"
   get 'load_products' => 'products#load_collection'
   get 'load_categories' => 'application#load_categories'
   post 'products/:id/select' => 'products#select'
   post 'products/:id/remove' => 'products#remove'
   post 'result' => "application#result"
+
+  resources :users, only: [:update, :edit] do
+    get :profile, on: :collection
+  end
+
+  get 'beer' => 'beer#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

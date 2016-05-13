@@ -1,0 +1,43 @@
+<%= form_for current_user, url: user_path(current_user), method: :put do |f| %>
+
+	<div class="col-md-6">
+		<table class="table">
+			<tr>
+				<th>First Name:</th>
+				<td><%= f.text_field :first_name %></td>
+			</tr>
+			<tr>
+				<th>Last Name:</th>
+				<td><%= f.text_field :last_name %></td>
+			</tr>
+			<tr>
+				<th>Email:</th>
+				<td><%= f.text_field :email %></td>
+			</tr>
+			<tr>
+				<th>Nickname:</th>
+				<td><%= f.text_field :nick_name %></td>
+			</tr>
+			<tr>
+				<th>Gender:</th>
+				<td><%= f.text_field :gender %></td>
+			</tr>
+			<tr>
+				<th>Birthday:</th>
+				<td><%= f.text_field :birthday %></td>
+			</tr>
+			<tr>
+				<th></th>
+				<td>
+					<%= f.submit_tag "Save", class: "btn btn-primary" %>
+				</td>
+			</tr>
+		</table>
+	</div>
+
+	<div class="col-md-6">
+		<%= image_tag current_user.avatar.thumb, size: "250x250" %>
+		<%= f.file_field :avatar %>
+	</div>
+
+<% end %>

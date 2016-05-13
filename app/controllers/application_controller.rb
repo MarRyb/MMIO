@@ -7,6 +7,8 @@ class ApplicationController < ActionController::Base
   end
 
   def result
+    use_case = Calculate::Result.new(current_user.id, params[:height][0].to_f, params[:weight][0].to_f, params[:activnost_id][:id], session[:selected_products_ids])
+    @result = use_case.run
   end
 
   def predict
@@ -16,6 +18,10 @@ class ApplicationController < ActionController::Base
 
   def load_categories
   	@categories = Kategory.all
+  end
+
+  def beer
+    
   end
 
 end

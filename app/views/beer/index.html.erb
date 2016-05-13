@@ -1,0 +1,197 @@
+<%= content_for :video do %>
+	<div class="img-header beer">
+		<span>Узнай какой у тебя будет живот</span>
+	</div>
+<% end %>
+<br><br>
+
+<h1>Расчет 'Пивного животика'</h1>
+	
+<div class="hidden">
+	<%= text_field_tag :beer_type, nil, id: "beer-type" %>
+	<%= text_field_tag :chastota, nil, id: "beer-chastota" %>
+	<%= text_field_tag :chastota, nil, id: "beer-count" %>
+	<%= text_field_tag :zakuska, nil, id: "beer-zakuska" %>
+</div>
+
+<h3>Шаг 1</h3>
+<div class="row">
+	<div class="col-md-6">
+		<div class="beer-choice light radio" onclick="Beer.setBeerValue('type', 'light', this)">
+			<div class="background"></div>
+			<div class="overlay"></div>
+
+			<div class="wrap">
+				<div id="check-part-1" class="check-sign"></div>
+				<div id="check-part-2" class="check-sign"></div>
+			</div>
+
+			<span>Светлое пиво</span>
+		</div>
+	</div>
+
+	<div class="col-md-6">
+		<div class="beer-choice dark radio" onclick="Beer.setBeerValue('type', 'dark', this)">
+			<div class="background"></div>
+			<div class="overlay"></div>
+
+			<div class="wrap">
+				<div id="check-part-1" class="check-sign"></div>
+				<div id="check-part-2" class="check-sign"></div>
+			</div>
+
+			<span>Темное пиво</span>
+		</div>
+	</div>
+</div>
+
+<h3>Шаг 2</h3>
+<div class="row">
+	<div class="col-md-4">
+		<div class="beer-choice radio light-1raz" onclick="Beer.setBeerValue('chastota', 1, this)">
+			<div class="background"></div>
+			<div class="overlay"></div>
+
+			<div class="wrap">
+				<div id="check-part-1" class="check-sign"></div>
+				<div id="check-part-2" class="check-sign"></div>
+			</div>
+
+			<span>1 раз в месяц</span>	
+		</div>
+	</div>
+
+	<div class="col-md-4">
+		<div class="beer-choice radio light-2raz" onclick="Beer.setBeerValue('chastota', 4, this)">
+			<div class="background"></div>
+			<div class="overlay"></div>
+
+			<div class="wrap">
+				<div id="check-part-1" class="check-sign"></div>
+				<div id="check-part-2" class="check-sign"></div>
+			</div>
+
+			<span>1 раз в неделю</span>	
+		</div>
+	</div>
+
+	<div class="col-md-4">
+		<div class="beer-choice radio light-2raz" onclick="Beer.setBeerValue('chastota', 30, this)">
+			<div class="background"></div>
+			<div class="overlay"></div>
+
+			<div class="wrap">
+				<div id="check-part-1" class="check-sign"></div>
+				<div id="check-part-2" class="check-sign"></div>
+			</div>
+
+			<span>Каждый день</span>
+		</div>
+	</div>
+</div>
+
+<h3>Шаг 3</h3>
+<div class="row">
+	<div class="col-md-4">
+		<div class="beer-choice radio light-1" onclick="Beer.setBeerValue('count', 0.5, this)">
+			<div class="background"></div>
+			<div class="overlay"></div>
+
+			<div class="wrap">
+				<div id="check-part-1" class="check-sign"></div>
+				<div id="check-part-2" class="check-sign"></div>
+			</div>
+
+			<span>1 литр</span>	
+		</div>
+	</div>
+
+	<div class="col-md-4">
+		<div class="beer-choice radio light-2" onclick="Beer.setBeerValue('count', 2, this)">
+			<div class="background"></div>
+			<div class="overlay"></div>
+
+			<div class="wrap">
+				<div id="check-part-1" class="check-sign"></div>
+				<div id="check-part-2" class="check-sign"></div>
+			</div>
+
+			<span>2-3 литра</span>	
+		</div>
+	</div>
+
+	<div class="col-md-4">
+		<div class="beer-choice radio light-3" onclick="Beer.setBeerValue('count', 4, this)">
+			<div class="background"></div>
+			<div class="overlay"></div>
+
+			<div class="wrap">
+				<div id="check-part-1" class="check-sign"></div>
+				<div id="check-part-2" class="check-sign"></div>
+			</div>
+
+			<span>>4 литров</span>
+		</div>
+	</div>
+</div>
+
+<h3>Шаг 4</h3>
+<div class="row">
+	<div class="col-md-4">
+		<div class="beer-choice fish" onclick="Beer.addBeerValue('zakuska', 0, this)">
+			<div class="background"></div>
+			<div class="overlay"></div>
+
+			<div class="wrap">
+				<div id="check-part-1" class="check-sign"></div>
+				<div id="check-part-2" class="check-sign"></div>
+			</div>
+
+			<span>Рыба</span>	
+		</div>
+	</div>
+
+	<div class="col-md-4">
+		<div class="beer-choice chipsi" onclick="Beer.addBeerValue('zakuska', 1, this)">
+			<div class="background"></div>
+			<div class="overlay"></div>
+
+			<div class="wrap">
+				<div id="check-part-1" class="check-sign"></div>
+				<div id="check-part-2" class="check-sign"></div>
+			</div>
+
+			<span>Чипсы</span>	
+		</div>
+	</div>
+
+	<div class="col-md-4">
+		<div class="beer-choice myaso" onclick="Beer.addBeerValue('zakuska', 2, this)">
+			<div class="background"></div>
+			<div class="overlay"></div>
+
+			<div class="wrap">
+				<div id="check-part-1" class="check-sign"></div>
+				<div id="check-part-2" class="check-sign"></div>
+			</div>
+
+			<span>Мясной сет</span>
+		</div>
+	</div>
+</div>
+
+<button onclick="Beer.calculate()" class="btn btn-primary" style="margin-bottom: 50px;">Рассчитать</button>
+
+
+<div>
+	<h1>Ваш результат: <span id="k">0.0</span>ККал</h1>
+	<div class="row">
+		<div class="col-md-6">
+			<img src="/beer/1.jpg" class="beer-image">
+		</div>
+		<div class="col-md-6">
+		</div>
+	</div>
+	
+
+</div>

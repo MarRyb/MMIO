@@ -1,3 +1,9 @@
+<%= content_for :video do %>
+	<div class="img-header predict"></div>
+<% end %>
+<br><br>
+
+
 <h1>Этап 1. Выберите продукты:</h1>
 
 <div class="products collection">
@@ -5,5 +11,32 @@
 </div>
 
 <h1>Выбранные продукты:</h1>
-<div class="products selected_products">
+<div class="products selected_products"></div>
+
+<h1>Дополнительные параметры:</h1>
+<div>
+	<%= form_tag do %>
+		<div class="form-group">
+			<label>Ваш вес:</label>
+			<%= text_field :weight, nil, class: "form-control" %>
+		</div>
+
+		<div class="form-group">
+			<label>Ваш рост:</label>
+			<%= text_field :height, nil, class: "form-control" %>
+		</div>
+
+		<div class="form-group">
+			<label>Ваша дневная активность:</label>
+			<%= collection_select :activnost_id, :id, Activnost.all, :id, :title, {},{class: "form-control"} %>
+		</div>
+
+		<div class="form-group">
+			<%= submit_tag "Отправить", class: "btn btn-primary" %>
+		</div>
+	<% end %>
 </div>
+
+<div class="margin-block"></div>
+
+<%= render 'shared/cat', text: "Выберите продукты, которыми вы питаетесь и нажмите кнопку 'Отправить'", font_size: 17 %>

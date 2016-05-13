@@ -1,0 +1,54 @@
+<%= content_for :video do %>
+	<div class="img-header"></div>
+<% end %>
+<br><br>
+
+<table class="table">
+	<thead>
+		<th>Продукт</th>
+		<th class="text-center">Кол-во</th>
+		<th class="text-center">Жиров</th>		
+		<th class="text-center">Белков</th>
+		<th class="text-center">Углеводов</th>
+		<th class="text-right">Калорийность</th>
+	</thead>
+	<tbody>
+		<% @result[:products].each do |product, gm| %>
+			<tr>
+				<td>
+					<%= image_tag product.picture, size: "40x40" %>
+					<%= product.title %>
+				</td>
+				<td class="text-center">
+					<%= gm.round(2) %>
+				</td>
+				<td class="text-center">
+					<%= (product.zhiri * gm / 100.0).round(2) %>
+				</td>
+				<td class="text-center">
+					<%= (product.belki * gm / 100.0).round(2) %>
+				</td>
+				<td class="text-center">
+					<%= (product.uglevodi * gm / 100.0).round(2) %>
+				</td>
+				<td class="text-right">
+					<%= (product.calorynost * gm / 100.0).round(2) %>
+				</td>
+			</tr>
+		<% end %>
+	</tbody>
+	<tfoot>
+		<tr>
+			<th>СУММА:</th>
+			<th class="text-center"><%= @result[:gm].round(2) %></th>
+			<th class="text-center"><%= @result[:zhiri].round(2) %></th>
+			<th class="text-center"><%= @result[:belki].round(2) %></th>
+			<th class="text-center"><%= @result[:uglevodi].round(2) %></th>
+			<th class="text-right"><%= @result[:metabolizm].round(2) %></th>
+		</tr>
+	</tfoot>
+</table>
+
+<br><br>
+
+<%= render 'shared/cat', text: "Похоже, сегодня вам не придется думать какие продукты нужно купить в магазине..", font_size: 16 %>

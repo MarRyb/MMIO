@@ -19,8 +19,7 @@ module Calculate
 			p "Б: #{belky_gm}мг"
 			p "Ж: #{zhiry_gm}мг"
 			p "У: #{uglevody_gm}мг"
-			p Calculate::GradientSpusk.new(products, prepare_params).run
-			# binding.pry
+			Calculate::GradientSpusk.new(products, prepare_params).run
 		end
 	
 	private 

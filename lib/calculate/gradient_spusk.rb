@@ -39,7 +39,7 @@ module Calculate
 				while (norma_gradient > EPS && h > EPS && inner_iterations_count < 10)
 					inner_iterations_count += 1
 					x1 = x.enum_for(:each_with_index).map {|xi, i| xi - h*grad[i]/norma_gradient }
-					# x1 = x.map {|xi| xi > 0.0 ? xi : 0.0 }
+					x1 = x1.map {|xi| xi > 0.0 ? xi : 0.0 }
 					# x = *x0
 					zx1 = z(x1)
 
@@ -59,11 +59,20 @@ module Calculate
 				x.each_with_index { |xi, i| dx[i] = xi - x0[i] }
 				@beta *= 10.0
 			end until norma(dx) < EPS
+
 			p "belki: #{sum_belki(x)}"
 			p "zhiri: #{sum_zhiri(x)}"
 			p "uglevodi: #{sum_uglevodi(x)}"
 			p "metabolizm: #{sum_metabolizm(x)}"
-			return x
+
+			{ 
+				products: Hash[products.zip(x)],
+				belki: sum_belki(x),
+				zhiri: sum_zhiri(x),
+				uglevodi: sum_uglevodi(x),
+				metabolizm: sum_metabolizm(x),
+				gm: x.inject(&:+)
+			}
 		end
 
 	private
