@@ -17,6 +17,9 @@
 //= require velocity.min
 //= require velocity.ui
 //= require welcome
+//= require typeahead/bloodhound.min
+//= require typeahead/typeahead.bundle.min
+//= require typeahead/typeahead.jquery.min
 
 var selectedCategory = {};
 var selectedProducts = [];
@@ -131,7 +134,7 @@ Beer = {
 			z = 0;
 		} else if (metabolizm <= 30000) {
 			z = 1;
-		} else if (metabolizm <= 70000) {
+		} else if (metabolizm <= 90000) {
 			z = 2;
 		} else {
 			z = 3;
@@ -139,6 +142,10 @@ Beer = {
 
 		$(".beer-image").attr('src', Beer.images[z]);
 		$("#k").text(metabolizm);
+
+		var min = 1;
+		var max = 10;
+		$("#years").text(Math.floor(Math.random() * (max - min + 1) + min));
 	}
 }
 

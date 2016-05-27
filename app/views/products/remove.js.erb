@@ -1,2 +1,2 @@
-$(".selected_products").html("<%= j render 'shared/products_list', products: @products, show_pagination: false %>");
+$(".selected_products").html("<%= j render 'shared/products_list', products: @products, show_pagination: false, include_typeahead: false %>");
 $("[data-product-id=<%= @product.id %>]").addClass('not-selected').removeClass('selected');

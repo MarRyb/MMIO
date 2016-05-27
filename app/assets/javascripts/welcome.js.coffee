@@ -1,6 +1,6 @@
 $ ->
   $("form#sign_in_user, form#sign_up_user").bind("ajax:success", (event, xhr, settings) ->
-    $(this).parents('.modal').modal('hide')
+    window.location.reload()
   ).bind("ajax:error", (event, xhr, settings, exceptions) ->
     $modal = $(this)
     if xhr.responseJSON['error']

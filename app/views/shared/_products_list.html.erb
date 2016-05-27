@@ -1,3 +1,10 @@
+<% if include_typeahead == true %>
+	<div id="remote" style="margin-bottom: 20px;">
+	  <input class="typeahead" type="text" placeholder="Введите продукт...">
+	</div>
+<% end %>
+
+
 <div class="row">
 	<% products.each do |product| %>
 		<div class="col-md-3">

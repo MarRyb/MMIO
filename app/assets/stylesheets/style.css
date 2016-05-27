@@ -357,6 +357,7 @@ width: 100px;
 	text-align: center;
 	vertical-align: middle;
 	font-size: 40px;
+	line-height: 1;
 }
 .beer-choice .background {
 	background-size: cover !important;
@@ -385,8 +386,11 @@ width: 100px;
 .beer-choice.light-2raz .background {
 	background: url('/beer/2raz.jpg') no-repeat 50% 50%;
 }
-.beer-choice.light-2raz .background {
-	background: url('/beer/2raz.jpg') no-repeat 50% 50%;
+.beer-choice.light-3raz .background {
+	background: url('/beer/3raz.jpg') no-repeat 50% 50%;
+}
+.beer-choice.light-1raz .overlay, .beer-choice.light-2raz .overlay, .beer-choice.light-3raz .overlay {
+	background-color: rgba(0,0,0,.3);
 }
 .beer-choice.light-3 .background {
 	background: url('/beer/3litra.jpg') no-repeat 50% 50%;; 

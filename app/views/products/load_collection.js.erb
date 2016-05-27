@@ -1,1 +1,25 @@
-$(".collection").html("<%= j render 'shared/products_list', products: @products, show_pagination: true %>");
+$(".collection").html("<%= j render 'shared/products_list', products: @products, show_pagination: true, include_typeahead: true %>");
+
+var bestPictures = new Bloodhound({
+  datumTokenizer: Bloodhound.tokenizers.obj.whitespace('value'),
+  queryTokenizer: Bloodhound.tokenizers.whitespace,
+  remote: {
+    url: '/api/products?category_id=<%= params[:category_id] %>&title=%QUERY',
+    wildcard: '%QUERY'
+  }
+});
+
+$('#remote .typeahead').typeahead(null, {
+  name: 'best-pictures',
+  display: 'title',
+  source: bestPictures
+});
+
+$('#remote .typeahead').on('typeahead:selected', function (e, datum) {
+  Product.select(datum.id);
+  setTimeout(function() {
+  	$('#remote .typeahead').val("");
+  }, 1);
+
+  return datum;
+});

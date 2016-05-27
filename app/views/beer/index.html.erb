@@ -5,7 +5,7 @@
 <% end %>
 <br><br>
 
-<h1>Расчет 'Пивного животика'</h1>
+<h1>Расчет 'Пивного животика' (только для мужщин)</h1>
 	
 <div class="hidden">
 	<%= text_field_tag :beer_type, nil, id: "beer-type" %>
@@ -76,7 +76,7 @@
 	</div>
 
 	<div class="col-md-4">
-		<div class="beer-choice radio light-2raz" onclick="Beer.setBeerValue('chastota', 30, this)">
+		<div class="beer-choice radio light-3raz" onclick="Beer.setBeerValue('chastota', 30, this)">
 			<div class="background"></div>
 			<div class="overlay"></div>
 
@@ -102,7 +102,7 @@
 				<div id="check-part-2" class="check-sign"></div>
 			</div>
 
-			<span>1 литр</span>	
+			<span>1-2 литра</span>	
 		</div>
 	</div>
 
@@ -116,7 +116,7 @@
 				<div id="check-part-2" class="check-sign"></div>
 			</div>
 
-			<span>2-3 литра</span>	
+			<span>3-4 литра</span>	
 		</div>
 	</div>
 
@@ -130,7 +130,7 @@
 				<div id="check-part-2" class="check-sign"></div>
 			</div>
 
-			<span>>4 литров</span>
+			<span>Пока деньги не закончатся<br>(5 >)</span>
 		</div>
 	</div>
 </div>
@@ -184,14 +184,22 @@
 
 
 <div>
-	<h1>Ваш результат: <span id="k">0.0</span>ККал</h1>
-	<div class="row">
-		<div class="col-md-6">
-			<img src="/beer/1.jpg" class="beer-image">
-		</div>
-		<div class="col-md-6">
-		</div>
-	</div>
-	
-
+	<table class="table table-bordered">
+		<tr>
+			<th class="text-center" style="white-space: nowrap; width: 450px;">Ваш результат</th>
+			<th class="text-center">Через</th>
+			<th class="text-center">Ваш внешний вид</th>
+		</tr>
+		<tr>
+			<td>
+				<h3 class="text-center"><span id="k">0.0</span>ККал</h3>
+			</td>
+			<td class="text-center" style="width: 520px">
+				<h3><span id="years">0</span> лет (года)</h3>
+			</td>
+			<td class="text-right"><img src="/beer/1.jpg" class="beer-image"></td>
+		</tr>
+	</table>
 </div>
+
+<%= render 'shared/cat', text: "Лучше не пейте пиво!", font_size: 27 %>

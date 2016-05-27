@@ -22,6 +22,10 @@ Rails.application.routes.draw do
 
   get 'beer' => 'beer#index'
 
+  namespace :api do
+    resources :products, only: :index
+  end
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
